@@ -51,10 +51,20 @@ export const deletePost = (id) => async (dispatch) => {
     console.log(error.message);
   }
 };
+
 export const upPost = (id) => async (dispatch) => {
   try {
     const { data } = await api.upPost(id); 
     dispatch ({type : UP , payload : data});
+  } catch(error) {
+    console.log(error.message);
+  }
+};
+
+export const downPost = (id) => async (dispatch) => {
+  try {
+    const { data } = await api.downPost(id); 
+    dispatch ({type : DOWN , payload : data});
   } catch(error) {
     console.log(error.message);
   }
